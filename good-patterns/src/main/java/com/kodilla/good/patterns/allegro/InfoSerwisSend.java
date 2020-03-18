@@ -4,6 +4,6 @@ public class InfoSerwisSend implements InfoSerwis {
 
     @Override
     public void informationUser(User user) {
-        System.out.println(user.getUnserName() + " send massage!");
+        System.out.println(user.getUserName() + " send massage!");
     }
 }

@@ -7,11 +7,11 @@ public class ProductOrderService {
         SampleOrder sampleOrder = new SampleOrder();
         Order order = sampleOrder.retrieve();
 
-        OrderProcesor orderProcesor = new OrderProcesor(new InfoSerwisSend(), new OrderDelivry(), new OrderRepositoryProcess());
+        OrderProcesor orderProcesor = new OrderProcesor(new InfoSerwisSend(), new OrderDelivery(), new OrderRepositoryProcess());
         OrderDto orderDto = orderProcesor.process(order);
 
         if (orderDto.isBought()){
-            System.out.println(orderDto.getProduct().getProductName() + " has been orderd by " + orderDto.getUser().getUnserName());
+            System.out.println(orderDto.getProduct().getProductName() + " has been ordered by " + orderDto.getUser().getUserName());
         }else {
             System.out.println("The order couldn't be completed");
         }
