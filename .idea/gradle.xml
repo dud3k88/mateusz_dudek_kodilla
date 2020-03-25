@@ -11,6 +11,21 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/good-patterns" />
+            <option value="$PROJECT_DIR$/kodilla-patterns" />
+            <option value="$PROJECT_DIR$/kodilla-spring" />
+            <option value="$PROJECT_DIR$/kodilla-spring-intro" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kodilla-spring-web" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/6.0.1/libexec" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kodilla-spring-web" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
