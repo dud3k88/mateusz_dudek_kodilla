@@ -1,16 +1,2 @@
-Board [Library]
-BBook{title='Book4', author='Author4', publicationDate=2003-04-07}
-BBook{title='Book3', author='Author3', publicationDate=2002-03-06}
-BBook{title='Book2', author='Author2', publicationDate=2001-02-05}
-
-Board [Library Copy 1]
-BBook{title='Book4', author='Author4', publicationDate=2003-04-07}
-BBook{title='Book3', author='Author3', publicationDate=2002-03-06}
-BBook{title='Book2', author='Author2', publicationDate=2001-02-05}
-
-Board [Library Copy 2]
-BBook{title='Book4', author='Author4', publicationDate=2003-04-07}
-BBook{title='Book1', author='Author1', publicationDate=2000-01-01}
-BBook{title='Book3', author='Author3', publicationDate=2002-03-06}
-BBook{title='Book2', author='Author2', publicationDate=2001-02-05}
-
+Kris share on: Facebook
+Kris share on:Twitter
