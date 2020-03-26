@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.strategy.social.UserTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-26T21:41:37" hostname="MacBook-Air-Mateusz.local" time="0.018">
-  <properties/>
-  <testcase name="testIndividualSharingStrategy" classname="com.kodilla.patterns.strategy.social.UserTestSuite" time="0.018"/>
-  <system-out><![CDATA[Kris share on: Facebook
-Kris share on:Twitter
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
