@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuit" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-26T12:07:58" hostname="MacBook-Air-Mateusz.local" time="0.057">
+  <properties/>
+  <testcase name="testGetBook" classname="com.kodilla.patterns.prototype.library.LibraryTestSuit" time="0.057"/>
+  <system-out><![CDATA[Board [Library]
+Book{title='Book4', author='Author4', publicationDate=2003-04-07}
+Book{title='Book3', author='Author3', publicationDate=2002-03-06}
+Book{title='Book2', author='Author2', publicationDate=2001-02-05}
+
+Board [Library Copy 1]
+Book{title='Book4', author='Author4', publicationDate=2003-04-07}
+Book{title='Book3', author='Author3', publicationDate=2002-03-06}
+Book{title='Book2', author='Author2', publicationDate=2001-02-05}
+
+Board [Library Copy 2]
+Book{title='Book4', author='Author4', publicationDate=2003-04-07}
+Book{title='Book1', author='Author1', publicationDate=2000-01-01}
+Book{title='Book3', author='Author3', publicationDate=2002-03-06}
+Book{title='Book2', author='Author2', publicationDate=2001-02-05}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
