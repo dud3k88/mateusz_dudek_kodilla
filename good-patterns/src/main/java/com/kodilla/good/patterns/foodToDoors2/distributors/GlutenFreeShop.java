@@ -1,27 +1,41 @@
 package com.kodilla.good.patterns.foodToDoors2.distributors;
 
-import com.kodilla.good.patterns.foodToDoors2.Order;
-import com.kodilla.good.patterns.foodToDoors2.OrderDto;
+import com.kodilla.good.patterns.foodToDoors2.Product;
+import com.kodilla.good.patterns.foodToDoors2.Suppliers;
 
-public class GlutenFreeShop implements FoodDistributor{
-    private static final String NAME = "Gluten Free Shop";
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
+public class GlutenFreeShop implements Suppliers {
+    private String supplierName;
+    private String supplierId;
+    private List<Product> productList;
 
-    @Override
-    public OrderDto process(Order order, boolean isOrdered) {
-        if(isOrdered) {
-            System.out.println("Order number: " + order.getOrderNumber() + " is completed");
-            return new OrderDto(true, order.getDateOfOrder(), order.getFoodDistributor(),
-                    order.getProduct(), order.getQuantity());
-        } else {
-            System.out.println("Order number: " + order.getOrderNumber() + " is incorrect");
-            return new OrderDto(false, order.getDateOfOrder(), order.getFoodDistributor(),
-                    order.getProduct(), order.getQuantity());
-        }
+    public GlutenFreeShop(String supplierName, String supplierId, List<Product> productList) {
+        this.supplierName = supplierName;
+        this.supplierId = supplierId;
+        this.productList = productList;
     }
 
-    @Override
-    public String genDistributionName() {
-        return NAME;
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public boolean process(String name, List<Product> productList) {
+        if (name != null && !productList.isEmpty()) {
+            System.out.println("Welcome to 'GlutenFreeShop'!\nProcessing Your order...");
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -1,22 +1,16 @@
 package com.kodilla.good.patterns.foodToDoors2;
 
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+import com.kodilla.good.patterns.foodToDoors2.distributors.ExtraFoodShop;
 
 public class Application {
     public static void main(String[] args) {
-        OrderSample orderList = new OrderSample();
-        ArrayList<Order> orders = orderList.retrieve();
 
-        for (Order order : orders){
-            OrderDto orderDto = order.getFoodDistributor().process(order, true);
-            if (orderDto.isOrdered()) {
-                System.out.println("Order details: "
-                        + "\nDate of order: " + orderDto.getDateOfOrder()
-                        + "\nProduct :" + orderDto.getProduct().getProductName()
-                        + "\nQuantity: " + orderDto.getQuantity()
-                        + "\nDistributor: " + orderDto.getFoodDistributor().genDistributionName());
-            }
-        }
+        DataRetriever dataRetriever = new DataRetriever();
+        ExtraFoodShop extraFoodShop = dataRetriever.retrieveExtraFoodShop();
+
+        OrderServiceProcessor orderServiceProcessor = new OrderServiceProcessor(new OrderServiceImpl() , new InformToConfirm());
+        orderServiceProcessor.order(extraFoodShop);
+
+
     }
 }
