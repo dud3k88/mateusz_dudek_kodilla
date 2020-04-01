@@ -1,1 +1,1 @@
-RBigmac{bun=SESAME, burgers=L, sauce=BBQ, ingredients=[Bacon, Cucumber, Mushroom]}
+TBigmac{burgers=1, roll='with sesame', sauce='1000 islands', ingredients=[cucumber]}

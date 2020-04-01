@@ -1,75 +1,119 @@
 package com.kodilla.patterns.builder.bigmac;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class Bigmac {
-    private Bun bun;
-    private Burger burgers;
-    private Sauce sauce;
-    private final List<String> ingredients;
+public final class Bigmac {
+    private static final Set<String> AVAILABLE_ROLLS =
+            new HashSet<>(Arrays.asList("with sesame","without sesame"));
+    private static final Set<String> AVAILABLE_SAUCES =
+            new HashSet<>(Arrays.asList("standard", "1000 islands", "barbecue"));
+    private static final Set<String> AVAILABLE_INGREDIENTS =
+            new HashSet<>(Arrays.asList("salad", "onion", "bacon", "shrimp", "cheese", "cucumber", "chilli pepper", "mushrooms"));
+    private final int burgers;
+    private final String roll;
+    private final String sauce;
+    private final Set<String> ingredients;
 
 
-    public static class BigmacBuilder {
-        private Bun bun;
-        private Burger burger;
-        private Sauce sauce;
-        private List<String> ingredients = new ArrayList<>();
-
-        public BigmacBuilder bun (Bun bun) {
-            this.bun = bun;
-            return this;
-        }
-
-        public BigmacBuilder burger (Burger burger) {
-            this.burger = burger;
-            return this;
-        }
-
-        public BigmacBuilder sauce (Sauce sauce) {
-            this.sauce = sauce;
-            return this;
-        }
-
-        public BigmacBuilder ingredient (String ingredient) {
-            ingredients.add(ingredient);
-            return this;
-        }
-
-        public Bigmac build() {
-            return new Bigmac(bun, burger, sauce, ingredients);
-        }
-    }
-
-    private Bigmac (final Bun bun, final Burger burger, final Sauce sauce, final List<String> ingredients) {
-        this.bun = bun;
-        this.burgers = burger;
+    private Bigmac(final String roll, final int burgers, final String sauce, final Set<String> ingredients) {
+        this.roll = roll;
+        this.burgers = burgers;
         this.sauce = sauce;
-        this.ingredients = new ArrayList<>(ingredients);
-    }
-    public Bun getBun() {
-        return bun;
+        this.ingredients = new HashSet<>(ingredients);
     }
 
-    public Burger getBurgers() {
+    public int getBurgers() {
         return burgers;
     }
 
-    public Sauce getSauce() {
-        return sauce;
+    public String getRoll() {
+        return roll;
     }
 
-    public List<String> getIngredients() {
-        return ingredients;
+    public String getSauce() {
+        return sauce;
     }
 
     @Override
     public String toString() {
         return "Bigmac{" +
-                "bun=" + bun +
-                ", burgers=" + burgers +
-                ", sauce=" + sauce +
+                "burgers=" + burgers +
+                ", roll='" + roll + '\'' +
+                ", sauce='" + sauce + '\'' +
                 ", ingredients=" + ingredients +
                 '}';
+    }
+
+    public Set<String> getIngredients() {
+        return ingredients;
+    }
+
+    public static class BigmacBuilder {
+        private String roll;
+        private int burgers;
+        private String sauce;
+        private Set<String> ingredients = new HashSet<>();
+
+        public BigmacBuilder roll(String roll) {
+            if (!AVAILABLE_ROLLS.contains(roll)) {
+                throw new IllegalStateException("No such a roll. Available rolls: with sesame, without sesame.");
+            }
+            this.roll = roll;
+            return this;
+        }
+
+        public BigmacBuilder burgers(int burgers) {
+            if (burgers <1 || burgers >3) {
+                throw new IllegalStateException("You can order ony 1 to 3 burgers");
+            }
+            this.burgers = burgers;
+            return this;
+        }
+
+        public BigmacBuilder sauce (String sauce) {
+            if (!AVAILABLE_SAUCES.contains(sauce)){
+                throw new IllegalStateException("Available sauce: standard, 1000 islands, barbecue");
+            }
+            this.sauce = sauce;
+            return this;
+        }
+
+        public BigmacBuilder ingredient (String ingredient){
+            if (!AVAILABLE_INGREDIENTS.contains(ingredient)){
+                throw new IllegalStateException("Available ingredients: salad, onion, bacon, shrimp, cheese, cucumber, chilli pepper,");
+            }
+            this.ingredients.add(ingredient);
+            return this;
+        }
+
+        public Bigmac build () {
+            return new Bigmac(roll, burgers, sauce, ingredients);
+        }
+
+        public String getRoll() {
+            return roll;
+        }
+
+        public int getBurgers() {
+            return burgers;
+        }
+
+        public String getSauce() {
+            return sauce;
+        }
+
+        public Set<String> getIngredients() {
+            return ingredients;
+        }
+
+        @Override
+        public String toString() {
+            return "Bigmac{" +
+                    "roll='" + roll + '\'' +
+                    ", burgers=" + burgers +
+                    ", sauce='" + sauce + '\'' +
+                    ", ingredients=" + ingredients +
+                    '}';
+        }
     }
 }
