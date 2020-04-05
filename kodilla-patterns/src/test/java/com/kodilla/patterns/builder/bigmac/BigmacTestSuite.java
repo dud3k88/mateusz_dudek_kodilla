@@ -9,9 +9,7 @@ public class BigmacTestSuite {
     public void BigmacBuldierTest() {
         //Given
 
-        Bigmac bigmac = new Bigmac.BigmacBuilder()
-                            .roll("with sesame")
-                            .burgers(1)
+        Bigmac bigmac = new Bigmac.BigmacBuilder("with sesame", 3)
                             .sauce("1000 islands")
                             .ingredient("cucumber")
                             .build();

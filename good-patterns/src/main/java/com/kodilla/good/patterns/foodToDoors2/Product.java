@@ -8,7 +8,7 @@ public class Product {
     private Type type;
 
     public enum Type {
-        FRUIT, VEGETABLE, MEAT, FISH, DAIRY, GRAIN, OTHER
+        FRUIT, VEGETABLE, MEAT, GRAIN,
     }
 
     public Product(String name, String productId, int quantity, Type type) {

@@ -12,16 +12,16 @@ public class OrderServiceProcessor {
 
 
 
-    public OrderDTO order(Suppliers supplier) {
+    public Order order(Suppliers supplier) {
         supplier.getSupplierName();
         supplier.getProductList();
         boolean isOrdered = supplier.process(supplier.getSupplierName(), supplier.getProductList());
         if (isOrdered) {
             informService.inform();
-            return new OrderDTO(supplier.getSupplierName(),
+            return new Order(supplier.getSupplierName(),
                     supplier.getProductList(), true);
         } else {
-            return new OrderDTO(supplier.getSupplierName(),
+            return new Order(supplier.getSupplierName(),
                     supplier.getProductList(), false);
         }
     }

@@ -48,11 +48,17 @@ public final class Bigmac {
         return ingredients;
     }
 
+
     public static class BigmacBuilder {
         private String roll;
         private int burgers;
         private String sauce;
         private Set<String> ingredients = new HashSet<>();
+
+        public BigmacBuilder (String roll, int burgers){
+            this.roll = roll;
+            this.burgers = burgers;
+        }
 
         public BigmacBuilder roll(String roll) {
             if (!AVAILABLE_ROLLS.contains(roll)) {
