@@ -1,3 +1,5 @@
+package com.kodilla.good.patterns.allegro;
+
 import java.util.Objects;
 
 public class User {

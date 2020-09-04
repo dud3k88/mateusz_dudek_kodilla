@@ -1,3 +1,5 @@
+package com.kodilla.good.patterns.allegro;
+
 public class OrderDto {
 
     private User user;
