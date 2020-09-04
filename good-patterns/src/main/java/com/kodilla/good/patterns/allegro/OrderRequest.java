@@ -1,12 +1,12 @@
 import java.time.LocalDateTime;
 
-public class Order {
+public class OrderRequest {
 
     private User user;
     private Product product;
     private LocalDateTime orderTime;
 
-    public Order(User user, Product product, LocalDateTime orderTime) {
+    public OrderRequest(User user, Product product, LocalDateTime orderTime) {
         this.user = user;
         this.product = product;
         this.orderTime = orderTime;

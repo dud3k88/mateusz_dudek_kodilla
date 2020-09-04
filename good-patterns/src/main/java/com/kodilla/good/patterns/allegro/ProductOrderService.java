@@ -1,19 +1,26 @@
-package com.kodilla.good.patterns.allegro;
-
 public class ProductOrderService {
 
-    public static void main(String[] args) {
+    private InformationService informationService;
+    private OrderService orderService;
+    private OrderRepository orderRepository;
 
-        SampleOrder sampleOrder = new SampleOrder();
-        Order order = sampleOrder.retrieve();
+    public ProductOrderService(final InformationService informationService, final OrderService orderService,
+                               final OrderRepository orderRepository) {
+        this.informationService = informationService;
+        this.orderService = orderService;
+        this.orderRepository = orderRepository;
+    }
 
-        OrderProcesor orderProcesor = new OrderProcesor(new InfoSerwisSend(), new OrderDelivery(), new OrderRepositoryProcess());
-        OrderDto orderDto = orderProcesor.process(order);
+    public OrderDto process (final OrderRequest orderRequest) {
+        boolean isOrdered = orderService.crateOrder(orderRequest.getUser(), orderRequest.getProduct(), orderRequest.getOrderTime());
 
-        if (orderDto.isBought()){
-            System.out.println(orderDto.getProduct().getProductName() + " has been ordered by " + orderDto.getUser().getUserName());
-        }else {
-            System.out.println("The order couldn't be completed");
+        if (isOrdered) {
+            informationService.sendInformation(orderRequest.getUser());
+            orderRepository.addToRepository(orderRequest.getProduct());
+
+            return new OrderDto(orderRequest.getUser(), true);
+        } else {
+            return new OrderDto(orderRequest.getUser(), false);
         }
     }
 }

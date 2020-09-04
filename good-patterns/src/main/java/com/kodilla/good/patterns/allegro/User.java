@@ -1,23 +1,34 @@
-package com.kodilla.good.patterns.allegro;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class User {
 
-    private final String userName;
-    private List<Order> orderList = new ArrayList<>();
+    private String userName;
+    private String adressEmail;
 
-
-    public User(String userName) {
+    public User(String userName, String adressEmail) {
         this.userName = userName;
+        this.adressEmail = adressEmail;
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void addToOrderList (Order order){
-        orderList.add(order);
+    public String getAdressEmail() {
+        return adressEmail;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return Objects.equals(getUserName(), user.getUserName()) &&
+                Objects.equals(getAdressEmail(), user.getAdressEmail());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserName(), getAdressEmail());
     }
 }
