@@ -8,10 +8,8 @@ public class Test {
         DataRetrieve dataRetrieve = new DataRetrieve();
         dataRetrieve.generateData();
 
-        List<Product> allProductList = dataRetrieve.getAllProductList();
         OrderRequest orderRequest = dataRetrieve.getSimpleOrder();
 
-        SupplierService supplierService = orderRequest.getProduct().getSupplier();
         OrderProcessor orderProcessor = new OrderProcessor();
 
         boolean isRealized = orderProcessor.realizeOrder(orderRequest).isRealized();

@@ -35,7 +35,7 @@ public class DataRetrieve {
     public OrderRequest getSimpleOrder() {
         Client client = new Client("Jan", "Janek12", "janek12@wp.pl");
 
-        return new OrderRequest(client, extraFoodProduct, 3, LocalDateTime.now());
+        return new OrderRequest(client, extraFoodProduct, 6, LocalDateTime.now());
     }
 
     public List<Product> getAllProductList() {
