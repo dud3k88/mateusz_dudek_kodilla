@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.FoodToDoors;
 
+import java.util.Objects;
+
 public class Product {
 
     private String productName;
@@ -22,5 +24,20 @@ public class Product {
 
     public SupplierService getSupplier() {
         return supplier;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Double.compare(product.price, price) == 0 &&
+                Objects.equals(productName, product.productName) &&
+                Objects.equals(supplier, product.supplier);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productName, price, supplier);
     }
 }

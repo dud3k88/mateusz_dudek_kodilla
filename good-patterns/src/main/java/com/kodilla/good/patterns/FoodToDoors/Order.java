@@ -14,16 +14,8 @@ public class Order {
         this.isRealized = isRealized;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
     public Product getProduct() {
         return product;
-    }
-
-    public int getQuantity() {
-        return quantity;
     }
 
     public boolean isRealized() {
