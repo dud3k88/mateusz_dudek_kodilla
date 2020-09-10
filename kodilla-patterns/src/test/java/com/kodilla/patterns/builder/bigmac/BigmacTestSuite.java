@@ -10,7 +10,6 @@ public class BigmacTestSuite {
         //Given
 
         Bigmac bigmac = new Bigmac.BigmacBuilder("with sesame", 3)
-                            .sauce("1000 islands")
                             .ingredient("cucumber")
                             .build();
         System.out.println(bigmac);

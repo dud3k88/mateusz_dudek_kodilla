@@ -61,7 +61,7 @@ public final class Bigmac {
         }
 
         public BigmacBuilder roll(String roll) {
-            if (!AVAILABLE_ROLLS.contains(roll)) {
+            if (!AVAILABLE_ROLLS.contains(roll) && roll != null) {
                 throw new IllegalStateException("No such a roll. Available rolls: with sesame, without sesame.");
             }
             this.roll = roll;
