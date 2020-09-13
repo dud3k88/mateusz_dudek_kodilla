@@ -1,1 +1,1 @@
-TBigmac{burgers=3, roll='with sesame', sauce='1000 islands', ingredients=[cucumber]}
+LBigmac{burgers=3, roll='with sesame', sauce='null', ingredients=[cucumber]}
