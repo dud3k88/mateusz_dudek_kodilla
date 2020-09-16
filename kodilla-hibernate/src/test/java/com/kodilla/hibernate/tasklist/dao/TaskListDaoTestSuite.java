@@ -25,12 +25,12 @@ public class TaskListDaoTestSuite {
         //When
         List<TaskList> readList = taskListDao.findByListName(listName);
         //Then
-        Assert.assertEquals(4, readList.size());
+        Assert.assertEquals(2, readList.size());
 
         //CleanUp
-        for (int i = 0; i <readList.size(); i++) {
-            int id = readList.get(i).getId();
-            taskListDao.deleteById(id);
+       // for (int i = 0; i <readList.size(); i++) {
+         //   int id = readList.get(i).getId();
+           // taskListDao.deleteById(id);
         }
     }
-}
+
