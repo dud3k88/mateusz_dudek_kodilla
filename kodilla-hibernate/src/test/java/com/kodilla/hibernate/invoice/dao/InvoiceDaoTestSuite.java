@@ -50,6 +50,6 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0, itemId2);
         Assert.assertNotEquals(0, itemId3);
 
-        //itemDao.deleteAll();
+        itemDao.deleteAll();
     }
 }

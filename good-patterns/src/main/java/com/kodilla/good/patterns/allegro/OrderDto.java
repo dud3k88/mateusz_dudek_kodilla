@@ -17,4 +17,6 @@ public class OrderDto {
     public boolean isBought() {
         return isBought;
     }
+
+
 }
